@@ -146,7 +146,7 @@ export default function InvestorDashboard() {
 
                       <button
                         onClick={() => handleInvest()}
-                        className="px-4 py-2 bg-zinc-950 text-white rounded-lg hover:bg-gray-800 transition-all text-sm font-medium flex-1 flex items-center justify-center"
+                        className="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-800 transition-all text-sm font-medium flex-1 flex items-center justify-center"
                       >
                         <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6v6m0 0v6m0-6h6m-6 0H6" />

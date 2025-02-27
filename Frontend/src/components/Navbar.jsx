@@ -22,9 +22,9 @@ export default function Navbar() {
       navigate('/');
     }
   };
-
+  // backdrop-blur-md 
   return (
-    <nav className=" fixed w-dvw backdrop-blur-md  z-50">
+    <nav className=" fixed w-dvw bg-white z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16">
           <div className="flex items-center">
@@ -33,7 +33,7 @@ export default function Navbar() {
               onClick={handleHomeClick}
               className="text-2xl font-bold text-black hover:text-gray-700 transition-colors duration-200"
             >
-              THRIVE X
+              INVSTART HUB
             </Link>
           </div>
           <div className="flex items-center space-x-4">

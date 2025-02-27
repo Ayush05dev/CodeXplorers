@@ -51,7 +51,8 @@ export const getStartups = async (req, res) => {
 // @route   GET /api/startups/:id
 export const getStartupById = async (req, res) => {
   try {
-    const startup = await Startup.findById(req.params.id);
+    const {userId}=req.params;
+    const startup = await Startup.findOne(userId);
     if (!startup) {
       return res.status(404).json({ message: 'Startup not found' });
     }

@@ -39,22 +39,6 @@ export default function Navbar() {
           <div className="flex items-center space-x-4">
             {token ? (
               <>
-                {role === 'entrepreneur' && (
-                  <>
-                    <Link
-                      to="/pitch-evaluation"
-                      className="text-black hover:text-gray-700 transition-colors duration-200"
-                    >
-                      Pitch Evaluation
-                    </Link>
-                    <Link
-                      to="/business-plan"
-                      className="text-black hover:text-gray-700 transition-colors duration-200"
-                    >
-                      Business Plan
-                    </Link>
-                  </>
-                )}
                 <button
                   onClick={handleLogout}
                   className="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-800 transition-all font-medium text-sm"

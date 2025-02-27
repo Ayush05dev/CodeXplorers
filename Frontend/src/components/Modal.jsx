@@ -7,7 +7,7 @@ export default function Modal({ isOpen, onClose, children }) {
           {children}
           <button
             onClick={onClose}
-            className="mt-4 bg-black text-white px-4 py-2 rounded-md hover:bg-gray-800 transition-colors"
+            className="mt-4 bg-green-600 text-white px-4 py-2 rounded-md hover:bg-green-800 transition-colors"
           >
             Close
           </button>

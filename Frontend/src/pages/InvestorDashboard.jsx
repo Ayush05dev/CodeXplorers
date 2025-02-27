@@ -301,12 +301,12 @@ export default function InvestorDashboard() {
                       <span className="text-gray-500">Funding Needs</span>
                       <span className="font-semibold text-gray-900">${startup.fundingNeeds.toLocaleString()}</span>
                     </div>
-                    {startup.location && (
+                    {/* {startup.location && (
                       <div className="flex flex-col items-end">
                         <span className="text-gray-500">Location</span>
                         <span className="font-semibold text-gray-900">{startup.location}</span>
                       </div>
-                    )}
+                    )} */}
                   </div>
                   <div className="mt-auto pt-4 border-t border-gray-100">
                     <div className="flex flex-col sm:flex-row gap-3">

@@ -35,16 +35,16 @@ export default function Matchmaking() {
   };
 
   return (
-    <div className="flex flex-col min-h-screen bg-gray-50">
+    <div className="flex flex-col min-h-screen">
       <Navbar />
       <main className="flex-grow px-6 md:px-12 py-8 pt-24 max-w-7xl mx-auto w-full">
         <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-8">
           <h1 className="text-3xl font-bold text-gray-900">Matchmaking</h1>
           <div className="flex mt-4 md:mt-0 space-x-3">
-            <Link to="/investordashboard" className="px-4 py-2 bg-zinc-950 text-white font-medium rounded-lg shadow-sm hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 transition-all">
+            <Link to="/investordashboard" className="px-4 py-2 bg-green-600 text-white font-medium rounded-lg shadow-sm hover:bg-green-800 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 transition-all">
               Investor Dashboard
             </Link>
-            <Link to="/investorpreference" className="px-4 py-2 bg-zinc-950 text-white font-medium rounded-lg shadow-sm border hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 transition-all">
+            <Link to="/investorpreference" className="px-4 py-2 bg-green-600 text-white font-medium rounded-lg shadow-sm border hover:bg-green-800 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 transition-all">
               Investment Preferences
             </Link>
           </div>

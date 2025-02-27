@@ -16,9 +16,9 @@ export default function Home() {
         {/* Subtle dark gradient overlay for better text contrast */}
         {/* <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/20"></div> */}
         
-        <div className="text-center  relative z-10 mb-60  py-12 px-16 mr-100 mt-70 ">
-          <h1 className="text-5xl font-bold mb-4 text-zinc-950">Welcome to INVSTART HUB</h1>
-          <p className="text-xl mb-8 text-zinc-950">AI-powered startup funding made simple.</p>
+        <div className="text-center  relative z-10 mb-60  py-12 px-10 mr-140 mt-70 ">
+          <h1 className="text-5xl font-bold mb-4 text-gray-200">Welcome to INVSTART HUB</h1>
+          <p className="text-xl mb-8 text-gray-200">AI-powered startup funding made simple.</p>
           <Button className="transform transition-transform duration-300 hover:scale-105 shadow-lg">
             <Link to='/signup'>Get Started</Link>
           </Button>

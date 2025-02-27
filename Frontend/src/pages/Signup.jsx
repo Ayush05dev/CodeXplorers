@@ -53,7 +53,7 @@ export default function Signup() {
   return (
     <div className="flex flex-col min-h-screen">
       <Navbar />
-      <main className="flex-grow flex items-center justify-center bg-gray-100">
+      <main className="flex-grow flex items-center justify-center">
         <div className="bg-white p-8 rounded-lg shadow-lg w-96">
           <h2 className="text-2xl font-bold mb-6">Signup</h2>
           {error && <p className="text-red-500 mb-4">{error}</p>}

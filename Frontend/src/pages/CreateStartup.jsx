@@ -50,13 +50,13 @@ export default function CreateStartup() {
   };
 
   return (
-    <div className="flex flex-col min-h-screen bg-gray-50">
+    <div className="flex flex-col min-h-screen bg-gray-200">
       <Navbar />
       <main className="flex flex-col items-center justify-center flex-grow p-6 pt-24">
         <h1 className="text-3xl font-bold text-gray-800 mb-6 text-center">
           Post Your Startup Idea
         </h1>
-        {error && <p className="text-red-500 mb-4">{error}</p>}
+        {error && <p className="text-red-600 mb-4">{error}</p>}
 
         <form
           onSubmit={handleSubmit}

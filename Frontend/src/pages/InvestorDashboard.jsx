@@ -58,13 +58,13 @@ export default function InvestorDashboard() {
           <div className="flex mt-4 md:mt-0 space-x-3">
             <Link
               to="/matchmaking"
-              className="px-4 py-2 bg-zinc-950 text-white font-medium rounded-lg shadow-sm hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 transition-all"
+              className="px-4 py-2 bg-green-600 text-white font-medium rounded-lg shadow-sm hover:bg-green-800 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 transition-all"
             >
               Matchmaking
             </Link>
             <Link
               to="/investorpreference"
-              className="px-4 py-2 bg-zinc-950 text-white font-medium rounded-lg shadow-sm border  hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 transition-all"
+              className="px-4 py-2 bg-green-600 text-white font-medium rounded-lg shadow-sm border  hover:bg-green-800 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 transition-all"
             >
               Investment Preferences
             </Link>
@@ -92,7 +92,7 @@ export default function InvestorDashboard() {
             <p className="text-gray-600 mb-4">No startups available at the moment.</p>
             <button 
               onClick={() => window.location.reload()} 
-              className="px-4 py-2 bg-indigo-600 text-white font-medium rounded-lg hover:bg-indigo-700 transition-all"
+              className="px-4 py-2 bg-green-600 text-white font-medium rounded-lg hover:bg-green-800 transition-all"
             >
               Refresh
             </button>

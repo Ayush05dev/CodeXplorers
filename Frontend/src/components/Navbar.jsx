@@ -57,7 +57,7 @@ export default function Navbar() {
                 )}
                 <button
                   onClick={handleLogout}
-                  className="px-4 py-2 bg-black text-white rounded-lg hover:bg-gray-800 transition-all font-medium text-sm"
+                  className="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-800 transition-all font-medium text-sm"
                 >
                   Logout
                 </button>
@@ -66,13 +66,13 @@ export default function Navbar() {
               <>
                 <Link 
                   to="/login" 
-                  className="text-black hover:text-gray-700 transition-colors duration-200"
+                  className="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-800 transition-all font-medium text-sm"
                 >
                   Login
                 </Link>
                 <Link 
                   to="/signup" 
-                  className="px-4 py-2 bg-black text-white rounded-lg hover:bg-gray-800 transition-all font-medium text-sm"
+                  className="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-800 transition-all font-medium text-sm"
                 >
                   Signup
                 </Link>

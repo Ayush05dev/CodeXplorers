@@ -22,7 +22,7 @@ export const generateBusinessPlan = async (req, res) => {
   }
 
   try {
-    const startupId = new mongoose.Types.ObjectId(req.user.id);
+    const startupId = new ObjectId(req.user.id);
     const model = genAI.getGenerativeModel({ model: "gemini-2.0-flash" });
 
     const prompt = `

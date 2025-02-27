@@ -92,7 +92,7 @@ export default function InvestorDashboard() {
             <p className="text-gray-600 mb-4">No startups available at the moment.</p>
             <button 
               onClick={() => window.location.reload()} 
-              className="px-4 py-2 bg-indigo-600 text-white font-medium rounded-lg hover:bg-indigo-700 transition-all"
+              className="px-4 py-2 bg-green-600 text-white font-medium rounded-lg hover:bg-green-800 transition-all"
             >
               Refresh
             </button>

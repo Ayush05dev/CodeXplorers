@@ -79,19 +79,19 @@ export default function EntrepreneurDashboard() {
           <div className="flex flex-wrap gap-3 mt-4 md:mt-0">
             <Link
               to="/createstartup"
-              className="px-4 py-2 bg-black text-white font-medium rounded-lg shadow-sm hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2 transition-all"
+              className="px-4 py-2 bg-green-600 text-white font-medium rounded-lg shadow-sm hover:bg-green-800 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2 transition-all"
             >
               Create Startup
             </Link>
             <Link
               to="/pitch-evaluation"
-              className="px-4 py-2 bg-white text-gray-800 font-medium rounded-lg shadow-sm border border-gray-300 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2 transition-all"
+              className="px-4 py-2 bg-green-600 text-white font-medium rounded-lg shadow-sm border border-gray-300 hover:bg-green-800 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2 transition-all"
             >
               Pitch Evaluation
             </Link>
             <Link
               to="/business-plan"
-              className="px-4 py-2 bg-white text-gray-800 font-medium rounded-lg shadow-sm border border-gray-300 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2 transition-all"
+              className="px-4 py-2 bg-green-600 text-white font-medium rounded-lg shadow-sm border border-gray-300 hover:bg-green-800 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2 transition-all"
             >
               Business Plan
             </Link>
@@ -119,7 +119,7 @@ export default function EntrepreneurDashboard() {
             <p className="text-gray-600 mb-4">No investors available at the moment.</p>
             <button 
               onClick={() => window.location.reload()} 
-              className="px-4 py-2 bg-black text-white font-medium rounded-lg hover:bg-gray-800 transition-all"
+              className="px-4 py-2 bg-green-600 text-white font-medium rounded-lg hover:bg-green-800 transition-all"
             >
               Refresh
             </button>

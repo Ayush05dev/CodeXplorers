@@ -1,6 +1,7 @@
 import jwt from 'jsonwebtoken';
 
 export const protect = (req, res, next) => {
+  console.log("Hi7")
   const token = req.header('x-auth-token');
 
   if (!token) {

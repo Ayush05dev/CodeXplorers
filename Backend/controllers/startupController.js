@@ -52,7 +52,7 @@ export const getStartups = async (req, res) => {
 export const getStartupById = async (req, res) => {
   try {
     const {userId}=req.params;
-    const startup = await Startup.findOne(userId);
+    const startup = await Startup.findOne(userId);// search inside the userId
     if (!startup) {
       return res.status(404).json({ message: 'Startup not found' });
     }

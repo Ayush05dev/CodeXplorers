@@ -5,13 +5,16 @@ import axiosInstance from '../api/axios';
 import { useState, useEffect } from 'react';
 import toast from 'react-hot-toast';
 import { jwtDecode } from "jwt-decode";
+import { useNavigate } from 'react-router-dom';
 
 export default function EntrepreneurDashboard() {
   const [investors, setInvestors] = useState([]);
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(true);
   const [startups, setStartups] = useState(null);
+  const [investmentRequests, setInvestmentRequests] = useState([]);
 
+  const navigate = useNavigate();
   const token = localStorage.getItem("token");
   const decodedToken = token ? jwtDecode(token) : null;
   const userId = decodedToken?.id;
@@ -26,9 +29,21 @@ export default function EntrepreneurDashboard() {
         // Fetch entrepreneur's startup details (only if user is logged in)
         if (userId) {
           const startupResponse = await axiosInstance.get(`/startups/${userId}`);
-          setStartups(startupResponse.data);
+          const startupData = startupResponse.data;
+          setStartups(startupData);
+           // Fetch investment requests for entrepreneur
+            // Extract the startup ID
+    const startupId = startupData?._id; // Assuming startupData contains _id
+
+    if (startupId) {
+      // Fetch investment requests using startup ID
+      const reqResponse = await axiosInstance.get(`/investment-request/entrepreneur/${startupId}`);
+      setInvestmentRequests(reqResponse.data);
+    } else {
+      console.error("Startup ID not found for user:", userId);
+    }
         }
-        console.log("data",startups)
+        // console.log("data",startups)
 
         setError('');
       } catch (err) {
@@ -41,6 +56,15 @@ export default function EntrepreneurDashboard() {
 
     fetchData();
   }, [userId]);
+
+  const openChat = (request) => {
+    // Implement navigation or modal opening for a chat interface.
+    // You could route to a chat page like: /chat/:roomId
+    // For example purposes, we simply show a toast.
+    const roomId = `${request.investorId._id}_${startups._id}`;
+    navigate(`/chat/${roomId}`, { state: { investor: request.investorId, startup: startups } });
+    // toast.success(`Opening chat with ${request.investorId.name}`);
+  };
 
   const handlePitch = async (investorId) => {
     try {
@@ -123,6 +147,24 @@ export default function EntrepreneurDashboard() {
             <p className="text-red-700">{error}</p>
           </div>
         )}
+
+
+<section className="mb-8">
+          <h2 className="text-2xl font-semibold mb-4">Investment Requests</h2>
+          {investmentRequests.length === 0 ? (
+            <p className="text-gray-600">No investment requests at the moment.</p>
+          ) : (
+            investmentRequests.map((request) => (
+              <div key={request._id} className="bg-white p-4 rounded shadow mb-4">
+                <p><strong>Investor:</strong> {request.investorId.name}</p>
+                <p><strong>Status:</strong> {request.status}</p>
+                <button onClick={() => openChat(request)} className="mt-2 px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-800">
+                  Open Chat
+                </button>
+              </div>
+            ))
+          )}
+        </section>
 
         {/* Loading State */}
         {loading ? (

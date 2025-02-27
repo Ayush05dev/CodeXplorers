@@ -287,7 +287,7 @@ export default function InvestorDashboard() {
                 <div className="p-5 flex flex-col h-full">
                   <div className="flex items-start justify-between mb-4">
                     <h2 className="text-xl font-bold text-gray-900">{startup.name}</h2>
-                    <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-zinc-950 text-white">
+                    <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-600 text-white">
                       {startup.industry}
                     </span>
                   </div>

@@ -39,7 +39,7 @@ export default function Signup() {
       localStorage.setItem('role', response.data.role); // Store role in localStorage
 
     // Redirect user based on role
-    if (role2 === 'investor') {
+    if (role1 === 'investor') {
       navigate('/investordashboard');
     } else {
       navigate('/entrepreneurdashboard');

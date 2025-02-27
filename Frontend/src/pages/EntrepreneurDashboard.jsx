@@ -23,7 +23,7 @@ export default function EntrepreneurDashboard() {
         // Fetch investors
         const investorResponse = await axiosInstance.get('/investors');
         setInvestors(investorResponse.data);
-        // print("Hi")
+        
         // Fetch entrepreneur's startup details (only if user is logged in)
         if (userId) {
           const startupResponse = await axiosInstance.get(`/startups/${userId}`);

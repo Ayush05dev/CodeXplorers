@@ -313,7 +313,7 @@ export default function InvestorDashboard() {
                       <a href={startup.pitchDeck} target="_blank" rel="noopener noreferrer" className="px-4 py-2 bg-white text-gray-700 border border-gray-300 rounded-lg hover:bg-gray-50 transition-all text-sm font-medium">
                         Pitch Deck
                       </a>
-                      <button onClick={() => handleInvest()} className="px-4 py-2 bg-zinc-950 text-white rounded-lg hover:bg-gray-800 transition-all text-sm font-medium">
+                      <button onClick={() => handleInvest()} className="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-800 transition-all text-sm font-medium">
                         Invest
                       </button>
                     </div>

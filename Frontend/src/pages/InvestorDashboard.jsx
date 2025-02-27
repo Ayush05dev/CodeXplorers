@@ -167,7 +167,7 @@
 
 
 
-
+import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import Card from '../components/Card';
@@ -180,11 +180,15 @@ const token = localStorage.getItem("token");
 const decodedToken = token ? jwtDecode(token) : null;
 const userId = decodedToken?.id;
 
+
 export default function InvestorDashboard() {
   const [startups, setStartups] = useState([]);
   const [investor, setInvestor] = useState(null);
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(true);
+  const [investmentRequests, setInvestmentRequests] = useState([]);
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchData = async () => {
@@ -197,7 +201,17 @@ export default function InvestorDashboard() {
         // Fetch investor preferences
         if (userId) {
           const investorResponse = await axiosInstance.get(`/investors/${userId}`);
-          setInvestor(investorResponse.data);
+          const investorData=investorResponse.data
+          setInvestor(investorData);
+          const investorId=investorData._id;
+
+          if(investorId){
+            const investmentRequestsResponse = await axiosInstance.get(`/investment-request/investor/${investorId}`);
+            setInvestmentRequests(investmentRequestsResponse.data);
+          }
+          else{
+            console.log("Investor ID not found",investorId)
+          }
         }
 
         setError('');
@@ -212,8 +226,17 @@ export default function InvestorDashboard() {
     fetchData();
   }, [userId]);
 
-  const handleInvest = async () => {
+  const handleInvest = async (startupId) => {
     try {
+      console.log(investor?._id," ",startupId)
+      await axiosInstance.post('/investment-request', {
+        
+        investorId: investor?._id,
+        startupId: startupId,
+        status: 'pending'
+        
+      });
+      
       toast.success('Invest Message Sent.', {
         style: { border: '1px solid black', padding: '16px', color: 'black' },
         iconTheme: { primary: 'black', secondary: 'white' },
@@ -223,6 +246,14 @@ export default function InvestorDashboard() {
       console.error('Investment error:', err);
     }
   };
+
+  const openChat = (request) => {
+
+    const roomId = `${investor._id}_${request.startupId._id}`;
+    navigate(`/chat/${roomId}`, { state: { investor: investor._id, startup: request.startupId._id } });
+  };
+
+  
 
   return (
     <div className="flex flex-col min-h-screen bg-gray-50">
@@ -261,6 +292,24 @@ export default function InvestorDashboard() {
             <p className="text-red-700">{error}</p>
           </div>
         )}
+
+
+<section className="mb-8">
+          <h2 className="text-2xl font-semibold mb-4">Investment Requests</h2>
+          {investmentRequests.length === 0 ? (
+            <p className="text-gray-600">No investment requests at the moment.</p>
+          ) : (
+            investmentRequests.map((request) => (
+              <div key={request._id} className="bg-white p-4 rounded shadow mb-4">
+                <p><strong>Investor:</strong> {request.investorId.name}</p>
+                <p><strong>Status:</strong> {request.status}</p>
+                <button onClick={() => openChat(request)} className="mt-2 px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-800">
+                  Open Chat
+                </button>
+              </div>
+            ))
+          )}
+        </section>
 
         {/* Display Startups */}
         {loading ? (
@@ -313,7 +362,7 @@ export default function InvestorDashboard() {
                       <a href={startup.pitchDeck} target="_blank" rel="noopener noreferrer" className="px-4 py-2 bg-white text-gray-700 border border-gray-300 rounded-lg hover:bg-gray-50 transition-all text-sm font-medium">
                         Pitch Deck
                       </a>
-                      <button onClick={() => handleInvest()} className="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-800 transition-all text-sm font-medium">
+                      <button onClick={() => handleInvest(startup._id)} className="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-800 transition-all text-sm font-medium">
                         Invest
                       </button>
                     </div>

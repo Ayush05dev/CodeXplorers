@@ -9,6 +9,9 @@ import InvestorDashboard from './pages/InvestorDashboard';
 import EntrepreneurDashboard from './pages/EntrepreneurDashboard';
 import CreateStartup from './pages/CreateStartup';
 import InvestorPreference from './pages/InvestorPreference'
+import Chat from './components/chat';
+
+
 
 export default function App() {
   return (
@@ -24,6 +27,8 @@ export default function App() {
         <Route path="/business-plan" element={<BusinessPlan />} />
         <Route path="/createstartup" element={<CreateStartup />} />
         <Route path="/investorpreference" element={<InvestorPreference/>} />
+        {/* Chat route with roomId as a URL parameter */}
+        <Route path="/chat/:roomId" element={<Chat />} />
       
       </Routes>
     </Router>

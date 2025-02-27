@@ -17,7 +17,7 @@ export default function Home() {
         {/* <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/20"></div> */}
         
         <div className="text-center  relative z-10 mb-60  py-12 px-16 mr-100 mt-70 ">
-          <h1 className="text-5xl font-bold mb-4 text-zinc-950">Welcome to THRIVE X</h1>
+          <h1 className="text-5xl font-bold mb-4 text-zinc-950">Welcome to INVSTART HUB</h1>
           <p className="text-xl mb-8 text-zinc-950">AI-powered startup funding made simple.</p>
           <Button className="transform transition-transform duration-300 hover:scale-105 shadow-lg">
             <Link to='/signup'>Get Started</Link>
@@ -30,7 +30,7 @@ export default function Home() {
         <div className="max-w-6xl mx-auto px-4">
           <h2 className="text-4xl font-bold text-center mb-16 relative">
             <span className="relative">
-              How THRIVE X Works
+              How INVSTART HUB Works
             </span>
           </h2>
           <div className="grid md:grid-cols-3 gap-12">
@@ -138,9 +138,9 @@ export default function Home() {
         <div className="max-w-4xl mx-auto text-center px-4">
           <div className="p-12 rounded-lg shadow-md border border-zinc-100 bg-zinc-50">
             <h2 className="text-4xl font-bold mb-8">Ready to Transform Your Future?</h2>
-            <p className="text-xl mb-8">Join THRIVE X today and be part of the next generation of startup success stories.</p>
+            <p className="text-xl mb-8">Join INVSTART HUB today and be part of the next generation of startup success stories.</p>
             <Button className="transform transition-transform duration-300 hover:scale-105 shadow-lg">
-              <Link to='/signup'>Join THRIVE X Now</Link>
+              <Link to='/signup'>Join INVSTART HUB Now</Link>
             </Button>
           </div>
         </div>
